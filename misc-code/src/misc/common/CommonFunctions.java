@@ -261,15 +261,16 @@ public class CommonFunctions {
 
 	public static List<String> getListFromDelimitedString(String str,
 			String delimiter) {
-		List<String> l = null;
 		if (str != null) {
 			final StringTokenizer st = new StringTokenizer(str, delimiter);
-			l = new ArrayList<String>();
+			final List<String> list = new ArrayList<String>();
 			while (st.hasMoreTokens()) {
-				l.add(st.nextToken().trim());
+				list.add(st.nextToken().trim());
 			}
+			return list;
+		} else {
+			return Collections.emptyList();
 		}
-		return l;
 	}
 
 	// Adds the value only if it is true
